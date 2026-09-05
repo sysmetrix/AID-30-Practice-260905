@@ -36,6 +36,11 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: '/AID-30-Practice-260905'
         run: npm run build
 
+      - name: Align asset paths with the Pages project URL
+        run: |
+          mv dist/client/AID-30-Practice-260905/_next dist/client/_next
+          rmdir dist/client/AID-30-Practice-260905
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
         with:
